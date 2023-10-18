@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Fast Car Rental - Dodge Charger</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../../images/Icon.png">
+    <link rel="stylesheet" href="charger.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js"></script>
+        <script src="charger.js" defer></script>
+</head>
+<body>
+    <!-- Banner -->
+    <section class="top-banner">
+        <p>Don't live your life <i>'one quarter mile at a time'</i> - Book online today and save!</p>
+    </section>
+    <!-- Navigation menu -->
+    <header>
+        <a href="../../index.html">
+            <div class="logo-container">
+                <img src="../../images/Logo.png" alt="Website Logo" class="logo">
+            </div>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../fleet/index.html">View Fleet</a></li>
+                <li><a href="#">Reviews</a></li>
+                <li><a href="#">Locations</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Product images -->
+    <section class="product-detail">
+        <div class="product-images">
+            <img src="../../images/charger/charger-onroad-2.jpg" alt="Supra" class="main-image">
+            <img src="../../images/charger/charger-2.jpg" alt="Supra" class="secondary-image">
+            <img src="../../images/charger/charger-side.jpg" alt="Supra" class="secondary-image">
+            <img src="../../images/charger/dodge-charger-3.jpg" alt="Supra" class="secondary-image">
+            <img src="../../images/charger/charger-blower.jpg" alt="Supra" class="secondary-image">
+            <img src="../../images/charger/charger-engine-bay.jpg" alt="Supra" class="secondary-image">
+            <img src="../../images/charger/charger-dash.jpg" alt="Supra" class="secondary-image">
+        </div>
+        <!-- Product info -->
+        <div class="product-info">
+            <span class="discount-label">30% OFF</span>
+            <h1>Dodge Charger</h1>
+            <h2>$149 per day</h2>
+            <s>$193.99</s>
+            <p>BONUS 30% OFF - 30 day discount</p>
+            <p>Tax & duties included</p>
+            <div class="rating">
+                <img src="../../images/stars.png" alt="Vehicle Image"><p>(66) Reviews</p>
+            </div>
+            <!-- Book now button -->
+            <div class="product-options">
+                <button class="add-to-cart">BOOK NOW</button>
+            </div>
+            <!-- Modal: Structure -->
+            <div class="modal" id="bookNowModal">
+                <div class="modal-content">
+                    <span class="close-btn">&times;</span>
+                    <h1>COMPLETE RESERVATION</h1>
+                    <p><strong>Upon completing this reservation enquiry, you will receive:</strong></p>
+                    <p>Your rental voucher to produce on arrival at the rental desk and a toll-free customer support number.</p>
+                    <div class="reservation-details">
+                        <!-- Modal: Date and times -->
+                        <h2>LOCATION & DATE</h2>
+                        <div class="input-wrapper">
+                            <label for="pick-up-date">Pick-Up Date:</label>
+                            <input type="date" id="pick-up-date" class="styled-input">
+                        </div>
+                        
+                        <div class="input-wrapper">
+                            <label for="pick-up-time">Pick-Up Time:</label>
+                            <input type="time" id="pick-up-time" class="styled-input">
+                        </div>
+                        
+                        <div class="input-wrapper">
+                            <label for="drop-off-date">Drop-Off Date:</label>
+                            <input type="date" id="drop-off-date" class="styled-input" min="07:00" max="18:00">
+                        </div>
+                        
+                        <div class="input-wrapper">
+                            <label for="drop-off-time">Drop-Off Time:</label>
+                            <input type="time" id="drop-off-time" class="styled-input" min="07:00" max="18:00">
+                        </div>
+                        <!-- Modal: Pick-Up location -->
+                        <p>
+                            <strong>Pick-Up Location</strong>: 
+                            <select name="pick-up-location">
+                                <option value="Brisbane">Select a location</option>
+                                <option value="Brisbane">Brisbane</option>
+                                <option value="Byron Bay">Byron Bay</option>
+                                <option value="Gold Coast">Gold Coast</option>
+                                <option value="Noosa Heads">Noosa Heads</option>
+                                <option value="Sunshine Coast">Sunshine Coast</option>
+                                <option value="Toowoomba">Toowoomba</option>
+                            </select>
+                        </p>
+                        <!-- Modal: Drop-Off location -->
+                        <p>
+                            <strong>Drop-Off Location</strong>: 
+                            <select name="drop-off-location">
+                                <option value="Brisbane">Select a location</option>
+                                <option value="Brisbane">Brisbane</option>
+                                <option value="Byron Bay">Byron Bay</option>
+                                <option value="Gold Coast">Gold Coast</option>
+                                <option value="Noosa Heads">Noosa Heads</option>
+                                <option value="Sunshine Coast">Sunshine Coast</option>
+                                <option value="Toowoomba">Toowoomba</option>
+                            </select>
+                        </p>
+                        <!-- Modal: Vehicle image -->
+                        <h2>YOUR CAR</h2>
+                        <img src="../../images/charger/Charger.png" alt="s2000" class="modal-vehicle-image">
+                    </div>
+                    <!-- Modal: Personal Information -->
+                    <div class="personal-information">
+                        <h2>PERSONAL INFORMATION</h2>
+                        <div class="input-row">
+                            <input type="text" placeholder="First Name*">
+                            <input type="text" placeholder="Last Name*">
+                        </div>
+                        <input type="text" placeholder="Phone Number*">
+                        <input type="text" placeholder="Age*">
+                        <input type="email" placeholder="Email*">
+                        <input type="text" placeholder="Address*">
+                        <div class="input-row">
+                            <input type="text" placeholder="City*">
+                            <input type="text" placeholder="Zip Code*">
+                        </div>
+                        <label><input type="checkbox"> Please send me latest news and updates</label>
+                    </div>
+                    <button class="reserve-now">RESERVE NOW</button>
+                </div>
+            </div>
+            <!-- Accordion Section -->
+            <!-- Description -->
+            <div class="accordion-section">
+                <button class="accordion-header">DESCRIPTION</button>
+                <div class="accordion-content">
+                    <p>This 1970 Charger R/T is one of the major cars driven in the Fast and Furious movie franchise by 'Dominic Toretto', 
+                        making its first appearance in the 2001 film 'The Fast and Furious'. Rated around 900 horsepower, it ran a 9-second 
+                        flat quarter-mile time at Palmdale Speedway. Dom states there was so much torque that the chassis twisted coming off 
+                        the line and his father barely kept it on the track..<br>
+                        <br>The 1970 Dodge Charger R/T was kept inside the garage of the Toretto House, was built by Dominic and his father 
+                        in his youth. When his father was killed in a stock race accident by Kenny Linder, Dominic refused to drive the Charger 
+                        because he was afraid of it. 
+                    </p>
+                </div>
+            </div>
+            <!-- Details -->
+            <div class="accordion-section">
+                <button class="accordion-header">DETAILS</button>
+                <div class="accordion-content">
+                    <h4>What we provide you with:</h4>
+                <ul>
+                    <li>Unlimited Kilometers.</li>
+                    <li>Comes with a full tank of fuel (98).</li>
+                    <li>Air-conditioning.</li>
+                    <li>A mechanically sound vehicle with ABS.</li>
+                    <li>Driver and passenger Airbags.</li>
+                    <li>Traction control.</li>
+                </ul>
+                <h4>What you provide us on return:</h4>
+                <ul>
+                    <li>Vehicle cleaned inside and out.</li>
+                    <li>No rubbish left behind.</li>
+                    <li>Returned with a full tank of fuel (98).</li>
+                    <li>No undisclosed damage to the vehicle.</li>
+                    <li>Keys.</li>
+                    <li>All documentation left inside the vehicle.</li>
+                </ul>
+                </div>
+            </div>
+            <!-- SPECS -->
+            <div class="accordion-section">
+                <button class="accordion-header">SPECIFICATIONS</button>
+                <div class="accordion-content">
+                <div class="product-specs">
+                    <h3>SPECS</h3>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>Make</td>
+                                <td>Dodge</td>
+                            </tr>
+                            <tr>
+                                <td>Model</td>
+                                <td>Charger</td>
+                            </tr>
+                            <tr>
+                                <td>Origin</td>
+                                <td>USA</td>
+                            </tr>
+                            <tr>
+                                <td>Year</td>
+                                <td>1970</td>
+                            </tr>
+                            <tr>
+                                <td>Body</td>
+                                <td>Coupe</td>
+                            </tr>
+                            <tr>
+                                <td>Doors</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>Seats</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>Drive Terrain</td>
+                                <td>Rear-Wheel-Drive</td>
+                            </tr>
+                            <tr>
+                                <td>Transmission</td>
+                                <td>5-Speed Manual</td>
+                            </tr>
+                            <tr>
+                                <td>Engine</td>
+                                <td>498ci Big-block Chrysler</td>
+                            </tr>
+                            <tr>
+                                <td>Power</td>
+                                <td>1200 HP</td>
+                            </tr>
+                            <tr>
+                                <td>Cylinders</td>
+                                <td>V8</td>
+                            </tr>
+                            <tr>
+                                <td>Forced Induction</td>
+                                <td>Twin-screw Super-charged</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                </div>
+            </div>
+            <!-- Video -->
+            <div class="video">
+                <h2><i>"<i>Comew and jump in the beast!</i>" - Car Chase Heroes</h2>
+                <video playsinline autoplay muted loop poster="path/to/your/posterimage.jpg" id="video">
+					<source src="../../video/charger.mp4" type="video/mp4">
+				</video>
+            </div>
+    </section>
+    <!-- Email sign-up Section -->
+    <section>
+        <div class="email-signup">
+            <h1>SIGN UP FOR AMAZING OFFERS</h1>
+            <p>EXCLUSIVE ACCESS TO OFFERS AND PROMOTIONS</p>
+            <div class="email-input-group">
+                <input type="email" placeholder="Enter your Email Address">
+                <button>SEND</button>
+            </div>
+            <div class="social-icons">
+                <img src="../../images/icons/facebook.png" alt="Twitter">
+                <img src="../../images/icons/insta.png" alt="Dribbble">
+                <img src="../../images/icons/twitter.png" alt="Facebook">
+            </div>
+        </div>            
+    </section>
+    <script src="supra.js"></script>
+</body>
+<footer>
+    <a href='#'class="back-to-top"><h3>Back to top</h3></a>
+    <nav>
+        <ul>
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../../fleet/index.html">View Fleet</a></li>
+            <li><a href="#">Reviews</a></li>
+            <li><a href="#">Locations</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+    </nav>
+    <h2>This website has been created by James McCann</h2>
+</footer>
+</html>
