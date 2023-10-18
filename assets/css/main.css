@@ -2260,12 +2260,12 @@ input, select, textarea {
 		min-height: 100%;
 		width: auto;
 		height: auto;
-		z-index: -1; /* Place video behind the content */
-		transform: translateX(-50%) translateY(-50%); /* Centering the video */
+		z-index: -1; 
+		transform: translateX(-50%) translateY(-50%);
 	}
 	
 	.content {
-		position: relative; /* This will make sure content stays on top of video */
+		position: relative; 
 	}
 	
 
@@ -2282,10 +2282,11 @@ input, select, textarea {
 /* Two */
 
 	#two {
-		background: url("images/overlay.png"), url("../../images/two.jpg");
-		background-size: 256px 256px, cover;
+		background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../images/SportsProDemo.png");
+		background-size: cover;
 		background-attachment: fixed, fixed;
-		background-position: top left, center center;
+		background-position: center center;
+		background-repeat: no-repeat;
 	}
 
 /* Three */
