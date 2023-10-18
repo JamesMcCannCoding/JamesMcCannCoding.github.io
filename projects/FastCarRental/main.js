@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function () {
             modalCarImage.src = "./images/eclipse/Eclipse.png";
             break;
         case 4:
-            modalCarImage.src = "./images/skyline/skyline.png";
+            modalCarImage.src = "./images/Skyline/skyline.png";
             break;
         case 5:
             modalCarImage.src = "./images/charger/Charger.png";
