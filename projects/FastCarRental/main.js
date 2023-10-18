@@ -161,7 +161,7 @@ $(document).ready(function() {
             price: 99
         },
         "S2000": {
-            image: "./images/s2000/S2000.png",
+            image: "./images/s2000/s2000.png",
             specs: {
                 "Make": "Honda",
                 "Model": "S2000",
@@ -197,7 +197,7 @@ $(document).ready(function() {
             price: 79 
         },
         "Skyline": {
-            image: "./images/skyline/skyline.png",
+            image: "./images/Skyline/skyline.png",
             specs: {
                 "Make": "Nissan",
                 "Model": "Skyline GT-R R34",
