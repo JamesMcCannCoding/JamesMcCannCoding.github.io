@@ -1,4 +1,13 @@
 <?php include 'view/header.php'; ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="icon" type="image/x-icon" href="./SportsProLogo.png">
+        <link rel="stylesheet" href="main.css" />
+        <title>Sports Pro Technical Support</title>
+</head>
 <main>
     <nav>
         <br>    
