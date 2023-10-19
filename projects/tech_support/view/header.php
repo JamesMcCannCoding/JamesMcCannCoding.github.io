@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html>
 
-<!-- The head section -->
 <head>
     <title>SportsPro Technical Support</title>
     <link rel="stylesheet" type="text/css"
-          href="./main.css">
+          href="../main.css">
     <link rel="icon" 
             href="./SportsProLogo.png" type="image/x-icon">
 </head>
 
-<!-- The body section -->
 <body>
 <header>
     <a href="../index.php">
@@ -24,3 +22,5 @@
         </ul>
     </nav>
 </header>
+</body>
+</html>

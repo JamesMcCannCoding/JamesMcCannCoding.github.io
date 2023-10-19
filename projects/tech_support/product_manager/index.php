@@ -35,7 +35,8 @@
                 // Call the delete_product function.
                 if (delete_product($product_code)) {
                     // Deletion was successful, you can redirect back to the product list page.
-                    header("Location:index.php?action=list_products");
+                    //header("Location:index.php?action=list_products");
+                    exit();
             }
         }
         // Shows the product add form.
