@@ -314,7 +314,6 @@ body {
 .time-input {
     margin-right: 10px;
 }
-
 .reservation-button {
     background-color: #2a2a2a;
     color: white;
@@ -494,15 +493,9 @@ input::placeholder {
 }
 
 /*Our Fleet at a glance section*/
-.vehicle-models-section {
-    text-align: center; 
-    padding: 2rem 33rem;
-    margin-bottom: 10rem;
-}
-.vehicle-models-section h2 {
-    font-size: 24px; 
-    margin: 0; 
-}
+/* Original Styles (omitting your previous code for brevity) */
+
+/* Mobile-first approach: set default styles for smallest screens */
 .vehicle-display {
     display: flex;
     flex-wrap: wrap;
@@ -513,15 +506,55 @@ input::placeholder {
 .car-image,
 .car-list {
     flex: 1;
-    padding: 2rem;
+    padding: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+.car-image img {
+    width: 100%;
+    height: auto;
+    max-width: none; /* This ensures the image doesn't overflow its container */
+    max-height: none;
+}
 
-/* Add a media query for screens with a maximum width of 768px (adjust as needed) */
-@media (max-width: 2000px) {
+/* Adjust for larger screens using media queries */
+@media (min-width: 768px) {
+    .car-image img {
+        max-width: 50rem;
+        max-height: 50rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .car-info,
+    .car-image,
+    .car-list {
+        padding: 2rem;
+    }
+}
+
+@media (min-width: 2000px) {
+    .vehicle-models-section {
+        padding: 5rem 1rem; 
+    }
+    .car-info,
+    .car-image,
+    .car-list {
+        padding: 1rem; 
+        max-width: 20rem; 
+        max-height: 20rem;  
+    }
+    .car-image img {
+        max-width: 50rem; 
+        max-height: 50rem;       
+    }
+}
+
+
+/* Add a media query for screens with a maximum width of 768px (adjust as needed) 
+@media (min-width: 2000px) {
     .vehicle-models-section {
         padding: 5rem 1rem; 
     }
@@ -542,7 +575,7 @@ input::placeholder {
     .car-cell {
         width: 100%; 
     }
-}
+}*/
 .car-table {
     display: flex;
     flex-direction: column;
@@ -564,17 +597,6 @@ input::placeholder {
 }
 .reserve-button:hover {
     background-color: darkblue;
-}
-.car-image {
-    display: flex;
-    justify-content: center; 
-    align-items: center; 
-}
-.car-image img {
-    max-width: 50rem; 
-    max-height: 50rem;       
-    width: auto;
-    height: auto;
 }
 .car-list {
     cursor: pointer;
@@ -620,7 +642,6 @@ input::placeholder {
     border-collapse: collapse; 
     width: 100%; 
 }
-
 .car-info th {
     background-color: #888; 
     color: #fff; 
@@ -631,7 +652,6 @@ input::placeholder {
     border: 1px solid #ccc; 
     padding: 10px;
 }
-
 .car-info tr:nth-child(even) {
     background-color: #f2f2f2;
 }

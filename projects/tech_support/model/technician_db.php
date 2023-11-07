@@ -49,6 +49,18 @@ function add_technician($first_name, $last_name, $email, $phone, $password) {
     }
 }
 
+function email_exists($email) {
+    global $db;
+    $query = 'SELECT COUNT(email) FROM technicians WHERE email = :email';
+    $statement = $db->prepare($query);
+    $statement->bindValue(':email', $email);
+    $statement->execute();
+    $count = $statement->fetchColumn();
+    $statement->closeCursor();
+    return $count > 0;
+}
+
+
 function update_technician($technician_id, $first_name, $last_name, $email, $phone, $password) {
     global $db;
 

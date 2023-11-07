@@ -118,28 +118,30 @@ function update_customer($customer_id, $first_name, $last_name, $address, $city,
     $statement->bindValue(':city', $city);
     $statement->bindValue(':state', $state);
     $statement->bindValue(':postal_code', $postal_code);
-    $statement->bindValue(':country_code', $country_code); // Bind country code
+    $statement->bindValue(':country_code', $country_code);
     $statement->bindValue(':phone', $phone);
     $statement->bindValue(':email', $email);
-    $hashed_password = password_hash($password, PASSWORD_DEFAULT); 
-    $statement->bindValue(':password', $hashed_password);
-    if ($statement->execute()) {
-        return true; // Deletion successful
-    } else {
-        return false; // Deletion failed
-    }
+    $statement->bindValue(':password', $password);
+    $params = array(
+    ':customer_id' => $customer_id,
+    ':first_name' => $first_name,
+    ':last_name' => $last_name,
+    ':address' => $address,
+    ':city' => $city,
+    ':state' => $state,
+    ':postal_code' => $postal_code,
+    ':country_code' => $country_code,
+    ':phone' => $phone,
+    ':email' => $email,
+    ':password' => $password
+);
+if ($statement->execute($params)) {
+    return true; // Update successful
+} else {
+    return false; // Update failed
+}
     $statement->closeCursor();
 }
-
-/*function get_countries() {
-    global $db;
-    $query = 'SELECT countryCode, countryName FROM countries';
-    $statement = $db->prepare($query);
-    $statement->execute();
-    $countries = $statement->fetchAll();
-    $statement->closeCursor();
-    return $countries;
-}*/
 
 function get_countries($customerCountryCode) {
     global $db;
@@ -157,8 +159,6 @@ function get_countries($customerCountryCode) {
         $selected = ($customerCountryCode === $countryCode) ? 'selected' : ''; // Check if it's the selected option
         $options .= "<option value='$countryCode' $selected>$countryName</option>";
     }
-
     return $options;
 }
-
 ?>

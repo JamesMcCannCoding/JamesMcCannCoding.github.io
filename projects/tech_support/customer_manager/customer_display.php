@@ -7,7 +7,7 @@
         <input type="hidden" name="customer_id" value="<?php echo $customer['customerID']; ?>">
 
         <label for="first_name">First Name:</label>
-        <input type="text" name="first_name" value="<?php echo htmlspecialchars($customer['firstName']); ?>"><br>
+        <input type="text" name="first_name" value="<?php echo $customer['firstName']; ?>"><br>
 
         <label for="last_name">Last Name:</label>
         <input type="text" name="last_name" value="<?php echo $customer['lastName']; ?>"><br>

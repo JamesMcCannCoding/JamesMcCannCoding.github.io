@@ -1,5 +1,5 @@
 <?php
-require_once('database_oo.php'); // make sure you update this reference after renaming the file
+require_once('database_oo.php'); 
 require_once('technician.php');
 
 class TechnicianDB {

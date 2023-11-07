@@ -3,16 +3,14 @@
 <head>
     <meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="../main.css" />
+    <link rel="stylesheet" href="../main.css"/>
     <title>Sports Pro - Manage Technicians</title>
 </head>
 <body>
     <main>
         <?php
-        //require('../model/database.php');
-        //require('../model/technician_db.php');
-        require('../model/database_oo.php');
-        require('../model/technician_db_oo.php');
+        require('../model/database.php');
+        require('../model/technician_db.php');
 
         $action = filter_input(INPUT_POST, 'action');
         if ($action === NULL) {
@@ -24,30 +22,29 @@
         // List Technicians:
         if ($action == 'list_technicians') {
             // Get technician data
-            //$technicians = get_technicians();
-            $technicianDB = new TechnicianDB();
-            $technicians = $technicianDB->getTechnicians();
-
+            $technicians = get_technicians();
             // Display technician list
             include('technician_list.php');
 
         // Delete technician:    
-        } else if ($action == 'delete_technician') {
-            $technician_id = filter_input(INPUT_POST, 'technician_id');
-            echo "Received technician ID: $technician_id";
-            // Ensure $technician_id is not empty and contains a valid product code
-            if (!empty($technician_id)) {
-                // Call the delete_technician function
-                $technicianDB = new TechnicianDB();
-                    if ($technicianDB->delete_technician($technician_id)) {
-                    // Deletion was successful, you can redirect back to the technician list page
-                    header("Location: index.php?action=list_technicians");
-            }
+} else if ($action == 'delete_technician') {
+    $technician_id = filter_input(INPUT_POST, 'technician_id');
+    // Ensure $technician_id is not empty and contains a valid product code
+    if (!empty($technician_id)) {
+        // Call the delete_technician function
+        if (delete_technician($technician_id)) {
+            // Deletion was successful, fetch the updated list of technicians
+            $technicians = get_technicians();
+            // Include the technician list page
+            include('technician_list.php');
         }
+    }
+
         // Shows the technician add form.
+        } else if ($action == 'show_add_form') {
+            include('technician_add.php'); // Load the form for adding a technician
+        // Technician add validation
         } else if ($action == 'add_technician') {
-            include('technician_add.php');
-        } else if ($action == 'submit_technician') {
             // Get data from the form
             $first_name = filter_input(INPUT_POST, 'firstName');
             $last_name = filter_input(INPUT_POST, 'lastName');
@@ -73,6 +70,12 @@
                 $errors['email'] = 'Email address is not valid.';
             }
 
+            if(email_exists($email)) {
+                // Handle the duplicate email case
+                $errorMessage = "The email address is already in use. Please use a different email.";
+                include('technician_error.php');
+            } 
+            
             // Validate Phone
             if (empty($phone)) {
                 $errors['phone'] = 'Phone is required.';
@@ -88,12 +91,11 @@
                 include('technician_error.php');
             } else {
                 // All validation passed, proceed with adding the technician
-                $technicianDB = new TechnicianDB();
-                $addSuccess = $technicianDB->add_technician($first_name, $last_name, $email, $phone, $password);
+                $addSuccess = add_technician($first_name, $last_name, $email, $phone, $password);
 
                 if ($addSuccess) {
-                    // Redirect to the technician list page with a success message
-                    header('Location: ?action=list_technicians&add_success=true');
+                    // Include the success page content
+                    include('technician_success.php');
                 } else {
                     // Handle the case where the addition fails
                     $errorMessage = "Failed to add the technician.";
@@ -102,6 +104,6 @@
             }
         }
         ?>
-        </main>
-    </body>
+    </main>
+</body>
 </html>

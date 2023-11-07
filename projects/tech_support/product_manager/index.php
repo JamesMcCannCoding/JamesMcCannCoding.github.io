@@ -36,7 +36,9 @@
                 if (delete_product($product_code)) {
                     // Deletion was successful, you can redirect back to the product list page.
                     //header("Location:index.php?action=list_products");
-                    exit();
+                    $products = get_products();
+                    include('product_list.php');
+                    //exit();
             }
         }
         // Shows the product add form.
@@ -99,7 +101,7 @@
 
                 if ($addSuccess) {
                     // Redirect to the product list.
-                    header('Location:?action=list_products&add_success=true');
+                    include('product_success.php');
                 } else {
                     // Handle the case where the adding fails.
                     $errorMessage = "Failed to add the product.";

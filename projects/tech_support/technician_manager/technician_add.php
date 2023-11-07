@@ -1,8 +1,7 @@
 <?php include '../view/header.php'; ?>
 <main>
-    <!-- displays the Add technician form -->
     <h1>Add Technician</h1>
-    <form method="post" action="index.php?action=submit_technician" id="aligned">
+    <form action="?action=add_technician" method="post" id="aligned">
         <label for="firstName">First Name:</label>
         <input type="text" name="firstName" id="firstName" ><br>
 
@@ -20,9 +19,6 @@
 
         <input type="submit" value="Add Technician">
     </form>
-    <nav>
-        <!-- Displays the view technician list button -->
-        <p><a href="?action=list_technicians">View Technician List</a></p>
-    </nav>
+    <p><a href="?action=list_technicians">View Technician List</a></p>
 </main>
 <?php include '../view/footer.php'; ?>

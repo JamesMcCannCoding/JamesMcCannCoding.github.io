@@ -11,8 +11,6 @@
             </ul>
         <?php endif; ?>
     </div>
-    <nav>
-        <p><a href="?action=show_add_form">Go Back</a></p>
-    </nav>
+    <p><a href="?action=show_add_form">Go Back</a></p>
 </main>
 <?php include '../view/footer.php'; ?>
