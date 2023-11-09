@@ -8,6 +8,15 @@ header {
     max-width: 50rem;
     min-width: 40rem;
 }
+/*Mobile compatability*/
+@media (max-width: 800px) {
+    .body {
+            width: 200%;
+            height: 200%;
+            transform-origin: top left;
+            transform: scale(50%);
+          }
+}
 header h1 {
     font-size: 26px;
 }
@@ -27,6 +36,7 @@ body {
     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
     position: relative;
 }
+
 /*Step column settings - Text colour and alignment*/
 .step-col {
     width: 50rem;
