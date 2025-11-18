@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Fast Car Rental - Nissan Skyline GT-R</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../../images/Icon.png">
+    <link rel="stylesheet" href="skyline.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js"></script>
+        <script src="skyline.js" defer></script>
+</head>
+<body>
+    <!-- Banner -->
+    <section class="top-banner">
+        <p>Don't live your life <i>'one quarter mile at a time'</i> - Book online today and save!</p>
+    </section>
+    <!-- Navigation menu -->
+    <header>
+        <a href="../../index.html">
+            <div class="logo-container">
+                <img src="../../images/Logo.png" alt="Website Logo" class="logo">
+            </div>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../fleet/index.html">View Fleet</a></li>
+                <li><a href="#">Reviews</a></li>
+                <li><a href="#">Locations</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Product images -->
+    <section class="product-detail">
+        <div class="product-images">
+            <img src="../../images/Skyline/skyline-front-left.png" alt="Skyline" class="main-image">
+            <img src="../../images/Skyline/skyline-front.png" alt="Skyline" class="secondary-image">
+            <img src="../../images/Skyline/skyline-side.png" alt="Skyline" class="secondary-image">
+            <img src="../../images/Skyline/skyline-right-side.png" alt="Skyline" class="secondary-image">
+            <img src="../../images/Skyline/skyline-rear-long.png" alt="Skyline" class="secondary-image">
+            <img src="../../images/Skyline/skyline-back.png" alt="Skyline" class="secondary-image">
+            <img src="../../images/Skyline/skyline-tail.png" alt="Skyline" class="secondary-image">
+        </div>
+        <!-- Product info -->
+        <div class="product-info">
+            <span class="discount-label">30% OFF</span>
+            <h1>Nissan Skyline GT-R (R34)</h1>
+            <h2>$109 per day</h2>
+            <s>$142.99</s>
+            <p>BONUS 30% OFF - 30 day discount</p>
+            <p>Tax & duties included</p>
+            <div class="rating">
+                <img src="../../images/stars.png" alt="Vehicle Image"><p>(72) Reviews</p>
+            </div>
+            <!-- Book now button -->
+            <div class="product-options">
+                <button class="add-to-cart">BOOK NOW</button>
+            </div>
+            <!-- Modal: Structure -->
+            <div class="modal" id="bookNowModal">
+                <div class="modal-content">
+                    <span class="close-btn">&times;</span>
+                    <h1>COMPLETE RESERVATION</h1>
+                    <p><strong>Upon completing this reservation enquiry, you will receive:</strong></p>
+                    <p>Your rental voucher to produce on arrival at the rental desk and a toll-free customer support number.</p>
+                    <div class="reservation-details">
+                        <!-- Modal: Date and times -->
+                        <h2>LOCATION & DATE</h2>
+                        <div class="input-wrapper">
+                            <label for="pick-up-date">Pick-Up Date:</label>
+                            <input type="date" id="pick-up-date" class="styled-input">
+                        </div>
+                        
+                        <div class="input-wrapper">
+                            <label for="pick-up-time">Pick-Up Time:</label>
+                            <input type="time" id="pick-up-time" class="styled-input">
+                        </div>
+                        
+                        <div class="input-wrapper">
+                            <label for="drop-off-date">Drop-Off Date:</label>
+                            <input type="date" id="drop-off-date" class="styled-input" min="07:00" max="18:00">
+                        </div>
+                        
+                        <div class="input-wrapper">
+                            <label for="drop-off-time">Drop-Off Time:</label>
+                            <input type="time" id="drop-off-time" class="styled-input" min="07:00" max="18:00">
+                        </div>
+                        <!-- Modal: Pick-Up location -->
+                        <p>
+                            <strong>Pick-Up Location</strong>: 
+                            <select name="pick-up-location">
+                                <option value="Brisbane">Select a location</option>
+                                <option value="Brisbane">Brisbane</option>
+                                <option value="Byron Bay">Byron Bay</option>
+                                <option value="Gold Coast">Gold Coast</option>
+                                <option value="Noosa Heads">Noosa Heads</option>
+                                <option value="Sunshine Coast">Sunshine Coast</option>
+                                <option value="Toowoomba">Toowoomba</option>
+                            </select>
+                        </p>
+                        <!-- Modal: Drop-Off location -->
+                        <p>
+                            <strong>Drop-Off Location</strong>: 
+                            <select name="drop-off-location">
+                                <option value="Brisbane">Select a location</option>
+                                <option value="Brisbane">Brisbane</option>
+                                <option value="Byron Bay">Byron Bay</option>
+                                <option value="Gold Coast">Gold Coast</option>
+                                <option value="Noosa Heads">Noosa Heads</option>
+                                <option value="Sunshine Coast">Sunshine Coast</option>
+                                <option value="Toowoomba">Toowoomba</option>
+                            </select>
+                        </p>
+                        <!-- Modal: Vehicle image -->
+                        <h2>YOUR CAR</h2>
+                        <img src="../../images/Skyline/skyline.png" alt="Skyline" class="modal-vehicle-image">
+                    </div>
+                    <!-- Modal: Personal Information -->
+                    <div class="personal-information">
+                        <h2>PERSONAL INFORMATION</h2>
+                        <div class="input-row">
+                            <input type="text" placeholder="First Name*">
+                            <input type="text" placeholder="Last Name*">
+                        </div>
+                        <input type="text" placeholder="Phone Number*">
+                        <input type="text" placeholder="Age*">
+                        <input type="email" placeholder="Email*">
+                        <input type="text" placeholder="Address*">
+                        <div class="input-row">
+                            <input type="text" placeholder="City*">
+                            <input type="text" placeholder="Zip Code*">
+                        </div>
+                        <label><input type="checkbox"> Please send me latest news and updates</label>
+                    </div>
+                    <button class="reserve-now">RESERVE NOW</button>
+                </div>
+            </div>
+            <!-- Accordion Section -->
+            <!-- Description -->
+            <div class="accordion-section">
+                <button class="accordion-header">DESCRIPTION</button>
+                <div class="accordion-content">
+                    <p>The 1999 Nissan Skyline R34 GT-R is a major car driven by Brian O'Conner in 2 Fast 2 Furious. features of the R34 
+                        include a C-West Body kit a blue long striped vinyl, HRE rims and a C-West spoiler wing. Brian's Nissan Skyline 
+                        GT-R is equipped with 2.6 liter RB26DETT Twin turbocharger and the engine can push around 330HP (stock) or over 550 HP, like this model (modified).<br>
+                        <br>After having his 1991 Dodge Stealth impounded by officers in Dallas, Texas, Brian gets a ride from "The Girl" 
+                        to a used car dealership, where he spots the Skyline. Brian purchases the car in cash with his previous winnings 
+                        and drives it away. He later gives it a paint job, adds a GT-R badge to the grill, and works underneath the car in a garage. 
+                    </p>
+                </div>
+            </div>
+            <!-- Details -->
+            <div class="accordion-section">
+                <button class="accordion-header">DETAILS</button>
+                <div class="accordion-content">
+                    <h4>What we provide you with:</h4>
+                <ul>
+                    <li>Unlimited Kilometers.</li>
+                    <li>Comes with a full tank of fuel (98).</li>
+                    <li>Air-conditioning.</li>
+                    <li>A mechanically sound vehicle with ABS.</li>
+                    <li>Driver and passenger Airbags.</li>
+                    <li>Traction control.</li>
+                </ul>
+                <h4>What you provide us on return:</h4>
+                <ul>
+                    <li>Vehicle cleaned inside and out.</li>
+                    <li>No rubbish left behind.</li>
+                    <li>Returned with a full tank of fuel (98).</li>
+                    <li>No undisclosed damage to the vehicle.</li>
+                    <li>Keys.</li>
+                    <li>All documentation left inside the vehicle.</li>
+                </ul>
+                </div>
+            </div>
+            <!-- SPECS -->
+            <div class="accordion-section">
+                <button class="accordion-header">SPECIFICATIONS</button>
+                <div class="accordion-content">
+                <div class="product-specs">
+                    <h3>SPECS</h3>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>Make</td>
+                                <td>Nissan</td>
+                            </tr>
+                            <tr>
+                                <td>Model</td>
+                                <td>Skyline (R34)</td>
+                            </tr>
+                            <tr>
+                                <td>Origin</td>
+                                <td>Japan</td>
+                            </tr>
+                            <tr>
+                                <td>Year</td>
+                                <td>1999</td>
+                            </tr>
+                            <tr>
+                                <td>Body</td>
+                                <td>Coupe</td>
+                            </tr>
+                            <tr>
+                                <td>Doors</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>Seats</td>
+                                <td>4</td>
+                            </tr>
+                            <tr>
+                                <td>Drive Terrain</td>
+                                <td>All-Wheel-Drive</td>
+                            </tr>
+                            <tr>
+                                <td>Transmission</td>
+                                <td>6-Speed Manual</td>
+                            </tr>
+                            <tr>
+                                <td>Engine</td>
+                                <td>RB26DETT</td>
+                            </tr>
+                            <tr>
+                                <td>Power</td>
+                                <td>550</td>
+                            </tr>
+                            <tr>
+                                <td>Cylinders</td>
+                                <td>In-line 6</td>
+                            </tr>
+                            <tr>
+                                <td>Forced Induction</td>
+                                <td>Twin-turbo Charged</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                </div>
+            </div>
+            <!-- Video -->
+            <div class="video">
+                <h2><i>"<i>It don't matter if you win by an inch or a mile. Winning's winning.</i>" - Dom Toretto</h2>
+                <video playsinline autoplay muted loop poster="path/to/your/posterimage.jpg" id="video">
+					<source src="../../video/skyline.mp4" type="video/mp4">
+				</video>
+            </div>
+    </section>
+    <!-- Email sign-up Section -->
+    <section>
+        <div class="email-signup">
+            <h1>SIGN UP FOR AMAZING OFFERS</h1>
+            <p>EXCLUSIVE ACCESS TO OFFERS AND PROMOTIONS</p>
+            <div class="email-input-group">
+                <input type="email" placeholder="Enter your Email Address">
+                <button>SEND</button>
+            </div>
+            <div class="social-icons">
+                <img src="../../images/icons/facebook.png" alt="Twitter">
+                <img src="../../images/icons/insta.png" alt="Dribbble">
+                <img src="../../images/icons/twitter.png" alt="Facebook">
+            </div>
+        </div>            
+    </section>
+    <script src="supra.js"></script>
+</body>
+<footer>
+    <a href='#'class="back-to-top"><h3>Back to top</h3></a>
+    <nav>
+        <ul>
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../../fleet/index.html">View Fleet</a></li>
+            <li><a href="#">Reviews</a></li>
+            <li><a href="#">Locations</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+    </nav>
+    <h2>This website has been created by James McCann</h2>
+</footer>
+</html>

@@ -1,0 +1,448 @@
+<!DOCTYPE HTML>
+<!-- Hi, welcome to my index page for my project Fast Car Rental - James McCann.-->
+<html lang="en">
+	<head>
+			<meta charset="utf-8" />
+			<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="icon" type="image/x-icon" href="./images/Icon.png">
+        <title>Fast Car Rental</title>
+		<link rel="stylesheet" href="main.css" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="main.js"></script>
+		
+	</head>
+    <body>
+        <!-- Top of page banner announcement. -->
+        <div class="top-banner">
+            <div class="banner-content-wrapper">
+                <p>Don't live your life 'one quarter mile at a time' - Book online today and save!</p>
+            </div>
+        </div>
+        <!-- Page header: logo and navigation links. -->
+        <header>
+            <div class="logo-container">
+                <img src="./images/Logo.png" alt="Website Logo" class="logo">
+                <nav>
+                    <ul>
+                        <li><a href="./index.html">Home</a></li>
+                        <li><a href="./fleet/index.html">View Fleet</a></li>
+                        <li><a href="#">Reviews</a></li>
+                        <li><a href="#">Locations</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </nav>
+                <div class="hamburger"></div>
+            </div>
+        </header>
+        <!-- Car booking and selection section. -->
+        <section>
+        <div class="background-section">
+            <div class="content-container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <form class="user-input-form">
+                            <div class="form-group">
+                                <select id="car-model-dropdown">
+                                    <option value="">SELECT YOUR NEXT CAR</option>
+                                    <option value="0">1995 Toyota Supra RZ</option>
+                                    <option value="1">2000 Honda S2000</option>
+                                    <option value="2">1995 Mitsubishi Eclipse GS</option>
+                                    <option value="3">1999 Nissan Skyline GT-R</option>
+                                    <option value="4">1970 Dodge Charger R/T</option>
+                                </select>
+                            </div>
+                            <!-- Pick-up location. -->
+                            <div class="form-group">
+                                <label for="pickup-location">Pick-up</label>
+                                <select id="pickup-location" name="pickup">
+                                    <option value="">Select a location</option>
+                                    <option value="brisbane">Brisbane</option>
+                                    <option value="byron">Byron Bay</option>
+                                    <option value="goldcoast">Gold Coast</option>
+                                    <option value="sunshine">Noosa Heads</option>
+                                    <option value="sunshine">Sunshine Coast</option>
+                                    <option value="sunshine">Toowoomba</option>
+                                </select>
+                            </div>
+                            <!-- Drop-off location. -->
+                            <div class="form-group">
+                                <label for="dropoff-location">Drop-off</label>
+                                <select id="dropoff-location" name="dropoff">
+                                    <option value="">Select a location</option>
+                                    <option value="brisbane">Brisbane</option>
+                                    <option value="byron">Byron Bay</option>
+                                    <option value="goldcoast">Gold Coast</option>
+                                    <option value="sunshine">Noosa Heads</option>
+                                    <option value="sunshine">Sunshine Coast</option>
+                                    <option value="sunshine">Toowoomba</option>
+                                </select>
+                            </div>
+                            <!-- Pick-up date and time. -->
+                            <div class="form-group datetime">
+                                <label for="pickup-date">Pick-up</label>
+                                <input type="date" id="pickup-date" name="pickupDate">
+                                <input type="time" id="pickup-time" name="pickupTime" value="08:00" min="07:00" max="18:00">
+                            </div>
+                            <!-- Drop-off date and time. -->
+                            <div class="form-group datetime">
+                                <label for="dropoff-date">Drop-off</label>
+                                <input type="date" id="dropoff-date" name="dropoffDate">
+                                <input type="time" id="dropoff-time" name="dropoffTime" value="15:30" min="07:00" max="18:00">
+                            </div>
+
+                            <!-- Complete reservation button. -->
+                            <button id="openModalBtn" type="submit" class="reservation-button">COMPLETE RESERVATION</button>
+                        </form>
+                    </div>
+                <!-- Car images carousel. -->
+                <div class="col-md-6">
+                    <div class="sticky-image-wrapper">
+                        <div id="imageCarousel" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active" data-model="0">
+                                    <img src="./images/supra/Supra.png" class="d-block w-100" alt="Supra">
+                                </div>
+                                <div class="carousel-item" data-model="1">
+                                    <img src="./images/s2000/s2000.png" class="d-block w-100" alt="S2000">
+                                </div>
+                                <div class="carousel-item" data-model="2">
+                                    <img src="./images/eclipse/Eclipse.png" class="d-block w-100" alt="Eclipse">
+                                </div>
+                                <div class="carousel-item" data-model="3">
+                                    <img src="./images/Skyline/skyline.png" class="d-block w-100" alt="Skyline">
+                                </div>
+                                <div class="carousel-item" data-model="4">
+                                    <img src="./images/charger/Charger.png" class="d-block w-100" alt="Charger">
+                                </div>
+                            </div>
+                            <a class="carousel-control-prev" href="#imageCarousel" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#imageCarousel" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+        </section>
+        <!-- Modal: Structure -->
+        <section>
+            <div class="booking-modal" id="bookNowModal">
+                <div class="modal-content">
+                    <span class="close-btn">&times;</span>
+                    <h1>COMPLETE RESERVATION</h1>
+                    <p><strong>Upon completing this reservation enquiry, you will receive:</strong></p>
+                    <p>Your rental voucher to produce on arrival at the rental desk and a toll-free customer support number.</p>
+                    <div class="reservation-details">
+                        <!-- Modal: Date and times -->
+                        <h2>LOCATION & DATE</h2>
+                        <div class="input-wrapper">
+                            <label for="pick-up-date">Pick-Up Date:</label>
+                            <input type="date" id="pick-up-date" class="styled-input">
+                        </div>
+                        
+                        <div class="input-wrapper">
+                            <label for="pick-up-time">Pick-Up Time:</label>
+                            <input type="time" id="pick-up-time" class="styled-input">
+                        </div>
+                        
+                        <div class="input-wrapper">
+                            <label for="drop-off-date">Drop-Off Date:</label>
+                            <input type="date" id="drop-off-date" class="styled-input" min="07:00" max="18:00">
+                        </div>
+                        
+                        <div class="input-wrapper">
+                            <label for="drop-off-time">Drop-Off Time:</label>
+                            <input type="time" id="drop-off-time" class="styled-input" min="07:00" max="18:00">
+                        </div>
+                        <!-- Modal: Pick-Up location -->
+                        <p>
+                            <strong>Pick-Up Location</strong>: 
+                            <select name="pick-up-location">
+                                <option value="Brisbane">Select a location</option>
+                                <option value="Brisbane">Brisbane</option>
+                                <option value="Byron Bay">Byron Bay</option>
+                                <option value="Gold Coast">Gold Coast</option>
+                                <option value="Noosa Heads">Noosa Heads</option>
+                                <option value="Sunshine Coast">Sunshine Coast</option>
+                                <option value="Toowoomba">Toowoomba</option>
+                            </select>
+                        </p>
+                        <!-- Modal: Drop-Off location -->
+                        <p>
+                            <strong>Drop-Off Location</strong>: 
+                            <select name="drop-off-location">
+                                <option value="Brisbane">Select a location</option>
+                                <option value="Brisbane">Brisbane</option>
+                                <option value="Byron Bay">Byron Bay</option>
+                                <option value="Gold Coast">Gold Coast</option>
+                                <option value="Noosa Heads">Noosa Heads</option>
+                                <option value="Sunshine Coast">Sunshine Coast</option>
+                                <option value="Toowoomba">Toowoomba</option>
+                            </select>
+                        </p>
+                        <!-- Modal: Vehicle image -->
+                        <h2>YOUR CAR</h2>
+                        <img src="./images/supra/Supra.png" alt="Supra" class="modal-vehicle-image"><!-- Default image -->
+                    </div>
+                    <!-- Modal: Personal Information -->
+                    <div class="personal-information">
+                        <h2>PERSONAL INFORMATION</h2>
+                        <div class="input-row">
+                            <input type="text" placeholder="First Name*">
+                            <input type="text" placeholder="Last Name*">
+                        </div>
+                        <input type="text" placeholder="Phone Number*">
+                        <input type="text" placeholder="Age*">
+                        <input type="email" placeholder="Email*">
+                        <input type="text" placeholder="Address*">
+                        <div class="input-row">
+                            <input type="text" placeholder="City*">
+                            <input type="text" placeholder="Zip Code*">
+                        </div>
+                        <label><input type="checkbox"> Please send me latest news and updates</label>
+                    </div>
+                    <button class="reserve-now">RESERVE NOW</button>
+                </div>
+            </div>
+        </section>
+        <!-- Vehicle models section. -->
+        <section class="vehicle-models-section">
+            <h1>Vehicle Models<br></h1><h2>Our rental fleet at a glance</h2>
+            <div class="vehicle-display">
+                <div class="car-table">
+                    <div class="car-list-heading">
+                        <p>Select your car</p>
+                    </div>
+                    <div class="car-cell" data-car="Supra"><p>Toyota Supra</p></div>
+                    <div class="car-cell" data-car="S2000"><p>Honda S2000</p></div>
+                    <div class="car-cell" data-car="Eclipse"><p>Mitsubishi Eclipse</p></div>
+                    <div class="car-cell" data-car="Skyline"><p>Nissan Skyline GT-R</p></div>
+                    <div class="car-cell" data-car="Charger"><p>Dodge Charger</p></div>
+                </div>
+                <!-- Center - Car Image -->
+                <div class="car-image">
+                    <img src="./images/supra/Supra.png" alt="Car Name">
+                </div>
+                <!-- Left side - Car Information Table -->
+                <div class="car-info">
+                    <table>
+                        <!-- By default set to Supra -->
+                        <thead>
+                            <tr>
+                                <th colspan="2" class="table-heading">$ 99 rent per day </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Make</td>
+                                <td>Toyota</td>
+                            </tr>
+                            <tr>
+                                <td>Model</td>
+                                <td>Supra RZ</td>
+                            </tr>
+                            <tr>
+                                <td>Year</td>
+                                <td>1995</td>
+                            </tr>
+                            <tr>
+                                <td>Body</td>
+                                <td>Coupe</td>
+                            </tr>
+                            <tr>
+                                <td>Doors</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>Seats</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>Drive Terrain</td>
+                                <td>Rear-Wheel-Drive</td>
+                            </tr>
+                            <tr>
+                                <td>Transmission</td>
+                                <td>6-Speed Manual</td>
+                            </tr>
+                            <tr>
+                                <td>Engine</td>
+                                <td>2JZ-GTE</td>
+                            </tr>
+                            <tr>
+                                <td>Power</td>
+                                <td>569 HP</td>
+                            </tr>
+                            <tr>
+                                <td>Cylinders</td>
+                                <td>Inline 6</td>
+                            </tr>
+                            <tr>
+                                <td>Forced Induction</td>
+                                <td>Twin-turbo charged</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <a href="#top" class="reserve-button">RESERVE NOW</a>
+                </div>
+            </div>
+            
+        </section>
+        <!-- Customer Review Carousel -->
+        <div class="container mt-5">
+            <div id="reviewCarousel" class="carousel slide" data-ride="carousel" data-interval="5000">
+                <!-- Slides -->
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="./images/Review1.png" alt="Review 1" class="d-block w-100">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./images/Review2.png" alt="Review 2" class="d-block w-100">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./images/Review1.png" alt="Review 3" class="d-block w-100">
+                    </div>
+                </div>
+                <!-- Indicators -->
+                <ul class="carousel-indicators">
+                    <li data-target="#reviewCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#reviewCarousel" data-slide-to="1"></li>
+                    <li data-target="#reviewCarousel" data-slide-to="2"></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Meet our Staff Section -->
+        <section class="staff-section">
+            <div class="staff">
+                <img src="./images/staff.jpg" alt="staff">
+            </div>
+            <div class="text-content">
+                <h2>Come down today and meet our friendly staff</h2>
+                <p>Want to kickstart your next journey with a fast rental car and unmatched customer service? 
+                    Come on down to our office! Our friendly staff is eagerly waiting to meet you, guide you 
+                    through our selection, and help you choose the perfect vehicle for your travels. Don’t 
+                    miss out on the personal touch that makes all the difference. Book your next fast rental 
+                    car with us today and drive away with confidence and style!</p>
+            </div>
+        </section>
+        <!-- Quality Section -->
+        <section class="quality-section">
+            <div class="content">
+                <h2>Unparalleled Vehicle Detailing Standard</h2>
+                <p>At <b>Fast Car Rental</b>, we don’t just rent cars; we provide an unmatched driving experience. 
+                    Before a vehicle is handed over to you, it undergoes a meticulous detailing process 
+                    that ensures it's in pristine condition, both inside and out. Our team of professionals 
+                    takes pride in ensuring every nook and cranny is cleaned, sanitized, and polished to 
+                    perfection. From the gleaming exterior to the fresh-smelling interior, our commitment 
+                    is to present you with a car that feels like it's fresh off the showroom floor. Because 
+                    when you choose to ride with us, you deserve nothing but the best. Your journey, no matter 
+                    how short or long, should begin in an environment that's spotless and comfortable. Choose 
+                    us and step into a world where every vehicle is a testament to immaculate care.</p>
+                <a href="#top" class="btn info-btn">More Information</a>
+                <a href="./fleet/index.html" class="btn buy-btn">View Fleet</a>
+            </div>
+            <div class="video">
+                <video playsinline autoplay muted loop poster="path/to/your/posterimage.jpg" id="video">
+					<source src="./video/R34Detailing.mp4" type="video/mp4">
+				</video>
+            </div>
+        </section>
+        <!-- Email sign-up Section -->
+        <section>
+            <div class="email-signup">
+                <h1>SIGN UP FOR AMAZING OFFERS</h1>
+                <p>EXCLUSIVE ACCESS TO OFFERS AND PROMOTIONS</p>
+                <div class="email-input-group">
+                    <input type="email" placeholder="Enter your Email Address">
+                    <button>SEND</button>
+                </div>
+                <div class="social-icons">
+                    <img src="./images/icons/facebook.png" alt="Twitter">
+                    <img src="./images/icons/insta.png" alt="Dribbble">
+                    <img src="./images/icons/twitter.png" alt="Facebook">
+                </div>
+            </div>            
+        </section>
+        <!-- Locations Section -->
+        <section>
+            <div class="locations-title">
+                <h1>Locataions</h1>
+                <h3>Browse our locations across QLD and NSW.</h3>
+            </div>
+            <div class="container">
+                <div class="locations">
+                    <div class="location" data-name="brisbane">Brisbane</div>
+                    <div class="location" data-name="byronbay">Byron Bay</div>
+                    <div class="location" data-name="goldcoast">Gold Coast</div>
+                    <div class="location" data-name="noosaheads">Noosa Heads</div>
+                    <div class="location" data-name="sunshinecoast">Sunshine Coast</div>
+                    <div class="location" data-name="toowoomba">Toowoomba</div>
+                </div>
+                <div class="map">
+                    <img src="./images/maps/brisbane.png" alt="Map" id="mapImage">
+                </div>
+                <div class="address">
+                    <h2 id="locationName">Brisbane</h2>
+                    <p id="locationAddress">456 Boundary Street, Fortitude Valley, Brisbane 4001, QLD.</p>
+                </div>
+            </div>
+            <div id="mapModal" class="map-modal">
+                <span class="close">&times;</span>
+                <img class="map-modal-content" id="modalImg">
+                <div id="caption"></div>
+            </div>            
+        </section>
+        <!-- Contact us Section -->
+        <section>
+            <div class="contact-us">
+                <h1>Contact Us</h1>
+                <p>You have any questions or need additional information?</p>
+                <p><strong>Address:</strong> 456 Boundary Street, Fortitude Valley, Brisbane 4001, QLD.</p>
+                <form action="#">
+                    <input type="text" placeholder="First Name" required>
+                    <input type="text" placeholder="Last Name" required>
+                    <input type="tel" placeholder="Telephone" required>
+                    <input type="email" placeholder="Email" required>
+                    <textarea placeholder="Message" required></textarea>
+                    <button type="submit">SUBMIT MESSAGE</button>
+                </form>
+                <div class="customer-center">
+                    <h3>Customer Service Center</h3>
+                    <p>Friendly & family orientated customer service specialist:</p>
+                    <div class="customer">
+                        <img src="./images/DomTorreto.png" alt="Customer Image">
+                        <ul>
+                            <li><h3>Dominic Toretto</h3></li>
+                            <li><b>Phone:</b> 666-999-888</li>
+                            <li><b>Email:</b> FastCarRental@example.com</li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </div> 
+        </section>
+        <script src="script.js"></script>
+    </body>
+    <footer>
+        <a href="#top"><h3>Back to top</h3></a>
+        <nav>
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./fleet/index.html">View Fleet</a></li>
+                <li><a href="#">Reviews</a></li>
+                <li><a href="#">Locations</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </nav>
+        <h3>This website has been created by James McCann</h3>
+    </footer>
+</html>

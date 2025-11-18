@@ -1,0 +1,1359 @@
+/*CSS for home page*/
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/*Banner*/
+@media (max-width: 767px) {
+    .top-banner {
+        top: 0;
+        left: 0;
+        width: 100%; 
+        background-color:#000000;
+        text-align: center; 
+        padding: 0.5rem 0;
+        font-weight: bold;
+        z-index: 1000;
+        width: 100%; 
+    }
+    .top-banner p{
+        font-size: 2vw; 
+        color: white;
+    }
+}
+@media (min-width: 768px) {
+    .top-banner {
+        top: 0;
+        left: 0;
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        background-color: #000000;
+        text-align: center; 
+        padding: 0.5rem 0;
+        font-weight: bold;
+        z-index: 1000;
+    }
+    /* --- NEW CSS for content wrapper --- */
+    .top-banner .banner-content-wrapper {
+        max-width: 80rem;
+        margin: 0 auto;
+        width: 100%;
+        text-align: center;
+    }
+    .top-banner p{
+        color: white;
+        margin: 0;
+        font-size: 1vw;
+    }
+}
+
+/*Header: logo and nav menu*/
+@media (max-width: 767px) {
+    header {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        display: flex;
+        flex-wrap: wrap; 
+        justify-content: space-between;
+        align-items: center;
+        background-color: white;
+        color: darkgrey;
+        box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
+        padding: 0 2rem;
+    }
+    header nav {
+        margin-left: auto;
+        margin-right: 0;
+    }
+    .logo-container, nav {
+        width: 100%;
+    }
+    .logo-container {
+            display: flex;
+            padding: 0 1rem; /* Better padding than calc(10% + 10px) */
+            align-items: center;
+            justify-content: space-between;
+            width: 100%; /* Ensure it spans the full width */
+        }
+        .logo {
+            width: 8rem; /* Slightly smaller for mobile */
+            height: auto;
+        }
+    .hamburger {
+        width: 50px;
+        height: 50px;
+        margin-left: auto;
+        background-image: url('./images/hamburger.png'); 
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        cursor: pointer;
+        flex-shrink: 0;
+    }
+header nav ul {
+        display: none;
+        flex-direction: column;
+        gap: 1rem;
+        /* Position it to the full width of the screen, right below the header */
+        position: absolute; 
+        top: 100%; /* Move it below the header height */
+        right: 0;
+        left: 0;
+        width: 100%;
+        text-align: center; /* Center links in the dropdown */
+        background-color: white; 
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+        padding: 1rem 0; /* Add padding for spacing */
+    }
+    header nav.active ul {
+        display: flex;
+    }
+    header nav a {
+        color: grey;
+        text-decoration: none;
+        transition: color 0.5s;
+    }
+    header nav a:hover {
+        color: blue;
+        text-decoration: none;
+    }
+}
+@media (min-width: 768px) {
+    header {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        display: flex;
+        flex-wrap: nowrap; 
+        justify-content: space-between;
+        align-items: center;
+        background-color: white;
+        color: darkgrey;
+        box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
+        padding: 0 5rem;
+    }
+    header nav {
+        margin-left: auto;
+        margin-right: 0;
+    }
+    .logo-container, nav {
+        width: auto;
+    }
+    .logo-container {
+        display: flex;
+        
+        align-items: center;
+        justify-content: flex-start; 
+        
+    }
+    .logo {
+        width: 10rem;
+        height: auto;
+        padding-left: 0;
+        flex-shrink: 0;
+    }
+    .hamburger {
+        display: none;
+    }
+    header nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        gap: 2rem; 
+        font-size: 14px;
+    }
+    header nav.active ul {
+        display: flex;
+    }
+    header nav a {
+        color: grey;
+        text-decoration: none;
+        transition: color 0.5s;
+    }
+    header nav a:hover {
+        color: blue;
+        text-decoration: none;
+    }
+}
+@media (min-width: 1200px) {
+    header {
+        padding-right: 0; 
+    }
+    header nav {
+        margin-left: auto;
+        margin-right: 0;
+    }
+    .logo-container, nav {
+        width: auto;
+        margin-right: 2rem;
+    }
+    .logo-container {
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+        padding: 0;
+        margin-right: 5rem;
+    }
+    .logo {
+        width: auto;
+        height: 5rem;
+        margin-left: 1rem;
+    }
+    .hamburger {
+        display: none;
+    }
+    header nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        gap: 4rem;
+        font-size: 18px;
+    }
+    header nav a {
+        color: grey;
+        text-decoration: none;
+        transition: color 0.5s;
+    }
+    header nav a:hover {
+        color: blue;
+        text-decoration: none;
+    }
+}
+
+/*Car booking section*/
+/* Responsive styles for smaller screens */
+@media (max-width: 767px) {
+    .background-section {
+        padding-top: 2rem; /* Less padding on top for mobile */
+        padding-bottom: 2rem;
+        min-height: auto; /* Let content define height on mobile */
+    }
+    .content-container {
+        padding: 1rem;
+        width: 100%;
+        margin: 0;
+        flex-direction: column;
+    }
+    .content-container .col-md-6 {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 1rem; /* Space between stacked elements */
+    }
+    .user-input-form {
+        background: white;
+        padding: 1rem;
+        max-width: none; /* Updated from 50rem to 100% */
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+    }
+    .form-group label {
+        flex-shrink: 1;
+        width: 20px; /* Use auto width for labels */
+        margin-right: 10px;
+        color: #2a2a2a;
+        display: block; /* Make labels take full width, i.e., stack on top of the input/select fields */
+    }
+    .form-group select, .date-input, .time-input {
+        width: 100%;
+        margin-right: 0;
+        margin-top: 5px;
+    }
+    .form-group.datetime {
+        flex-direction: column; /* Stack label and inputs vertically */
+        align-items: flex-start;
+    }
+    .datetime-inputs {
+        /* *** THIS IS THE KEY CHANGE *** */
+        flex-direction: column; /* Stack date and time inputs vertically */
+        align-items: flex-start; /* Align stacked items to the left */
+        width: 100%; /* Make this container take the full width */
+    }
+    .datetime .time-input {
+        margin-right: 0;
+    }
+    .datetime input[type="date"],
+    .datetime input[type="time"] {
+        width: 100%; /* Make input fields take the full width of the container */
+        box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
+        margin-left: 0 !important; /* Override desktop margin */
+        margin-right: 0 !important;
+        margin-bottom: 10px; /* Add space between stacked date and time fields */
+    }
+    .datetime input[type="time"] {
+        margin-bottom: 0;
+    }
+    .datetime label {
+        width: auto;
+    }
+    .datetime-inputs {
+        display: flex;
+        align-items: center;
+    }
+    .date-input, 
+    .time-input {
+        margin-right: 10px;
+    }
+}
+@media (min-width: 768px) and (max-width: 1200px) {
+    
+    /* Target the container holding the date and time inputs */
+    .datetime-inputs {
+        /* Force vertical stacking of date and time inputs */
+        display: flex; 
+        flex-direction: column; 
+        align-items: flex-start;
+        width: 100%; 
+    }
+    
+    /* Ensure the inputs themselves take full width when stacked */
+    .datetime input[type="date"],
+    .datetime input[type="time"] {
+        width: 100%; 
+        box-sizing: border-box; 
+        margin-left: 0 !important; /* Clear any previous horizontal margin */
+        margin-right: 0 !important;
+        margin-bottom: 10px; /* Add space between stacked fields */
+    }
+    
+    /* Remove bottom margin from the last stacked input */
+    .datetime input[type="time"] {
+        margin-bottom: 0;
+    }
+    
+    /* General Form Group Adjustment for Stacking */
+    .form-group.datetime {
+        /* Change the primary form group from row to column to fit the stacked inputs better */
+        flex-direction: column; 
+        align-items: flex-start;
+    }
+    .form-group.datetime label {
+        margin-bottom: 5px; /* Add space below the label */
+        width: auto;
+    }
+}
+
+.background-section {
+    background: linear-gradient(to bottom, #303131 0, rgba(48,49,49,.8) 50%, #303131 100%);
+    position: relative;
+    min-height: 45rem;
+    color: white;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.content-container {
+    text-align: center;
+    width: 90%; /* Keep this flexible width */
+    margin: 0 auto; /* Center the container horizontally */
+    display: flex;
+    flex-wrap: wrap; /* Allow columns to wrap on smaller screens */
+    justify-content: center; /* Center the form and carousel */
+    align-items: center; /* Align them vertically in the center if they have different heights */
+}
+/* Adjust the .row inside content-container */
+.content-container > .row {
+    width: 100%; /* Ensure the row takes full width of its container */
+    margin: 0; /* Remove default Bootstrap row margins */
+    display: flex; /* Ensure it behaves as a flex container */
+    flex-wrap: wrap; /* Allow columns to wrap */
+    justify-content: center; /* Center content horizontally */
+}
+.user-input-form {
+    background: white;
+    padding: 3rem;
+    max-width: 50rem;
+    margin: 0 auto;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+}
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+.form-group label {
+    flex-shrink: 0;
+    width: 80px;
+    margin-right: 10px;
+    color: #2a2a2a;
+}
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    color: #2a2a2a;
+    border: 1px solid #ddd;
+}
+.datetime {
+    align-items: center;
+}
+
+.datetime label {
+    width: 80px;
+}
+.datetime-inputs {
+    display: flex;
+    align-items: center;
+}
+.date-input, 
+.time-input {
+    margin-right: 10px;
+}
+.reservation-button {
+    background-color: #2a2a2a;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.5s;
+    transition: transform 0.5s;
+    box-shadow: 2px 2px 5px 3px rgba(0, 0, 0, 0.3);
+}
+.reservation-button:hover {
+    background-color: #007BFF;
+    transform: scale(1.1);
+    font-weight: bold;
+}
+/*Carousel: Car Image settings*/
+#imageCarousel .carousel-inner .carousel-item img {
+    max-width: 100%; 
+    max-height: 400px;
+    object-fit: contain; 
+}
+.sticky-image-wrapper {
+    position: sticky;
+    top: 5rem; 
+    height: fit-content; 
+    max-width: 100%; 
+}
+
+/*Booking Modal settings*/
+.booking-modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 1000;
+}
+.modal-content {
+    font-family: Arial, sans-serif;
+    position: relative;
+    margin: 5% auto;
+    padding: 1rem;
+    width: 100%;
+    max-height: 80rem;
+    max-width: 50rem;
+    background-color: lightgrey;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
+    overflow: auto;
+}
+.modal-vehicle-image {
+    margin-left: 10rem;
+    margin-right: 5rem;
+    width: 50%;
+    max-width: 100%;
+    height: auto;
+}
+.close-btn {
+    position: absolute;
+    top: 0rem;
+    right: 1rem;
+    font-size: 2rem;
+    cursor: pointer;
+}
+.modal-content h1, 
+.modal-content h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    background: linear-gradient(to bottom,#303131 0,rgba(48,49,49,.8) 50%,#303131 100%);
+    padding: .5rem;
+    color: white;
+}
+.modal-content p {
+    padding-left: 2rem;
+    width: 70%;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    margin-bottom: 15px;
+}
+.input-wrapper {
+    margin-bottom: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.input-wrapper label {
+    margin-right: 20px;
+    font-weight: bold;
+    color: #333;
+}
+.styled-input {
+    border: none;
+    background: none;
+    outline: none;
+    font-size: 16px;
+    width: 60%;
+    color: #555;
+}
+.styled-input:focus {
+    border-color: #007BFF;
+}
+select[name="pick-up-location"], select[name="drop-off-location"] {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    width: 60%;
+    background-color: #ffffff;
+    color: #555;
+    appearance: none;
+    cursor: pointer;
+    position: relative;
+    flex-basis: 65%;
+}
+select[name="pick-up-location"]::after, select[name="drop-off-location"]::after {
+    content: "\25BC";
+    font-size: 10px;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+select[name="pick-up-location"]:hover, select[name="drop-off-location"]:hover {
+    box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.15);
+}
+select[name="pick-up-location"]:focus, select[name="drop-off-location"]:focus {
+    outline: none;
+    box-shadow: 0px 2px 20px rgba(0, 128, 255, 0.5);
+}
+.reservation-details, .personal-information {
+    margin-bottom: 20px;
+}
+input[type="text"],
+input[type="email"],
+input[type="datetime-local"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+}
+input[type="date"], input[type="time"] {
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    color: #333;
+}
+input[type="date"]:focus, input[type="time"]:focus {
+    border-color: #007BFF; 
+    outline: none;  
+}
+input::placeholder {
+    color: #999;
+}
+.input-row {
+    display: flex;
+    justify-content: space-between;
+}
+.input-row input[type="text"] {
+    width: 48%;
+}
+.reserve-now {
+    display: block;
+    margin: 0 auto;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.reserve-now:hover {
+    background-color: #007BFF;;
+}
+
+/*Our Fleet at a glance section*/
+.vehicle-display {
+    display: flex;
+    flex-wrap: wrap; /* Allows stacking on small screens */
+    justify-content: space-between;
+    align-items: center; /* Align items to the top for neatness */
+    padding: 1rem; /* Overall section padding */
+    gap: 1rem; /* Space between the columns */
+}
+.car-list {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.car-info {
+    /* Give it enough room for the table, but less than the image (2x the buttons) */
+    flex: 2 1 250px; /* flex-grow: 2; flex-shrink: 1; flex-basis: 250px; */
+    max-width: 25rem; /* Give it a soft max limit to keep the details narrow */
+}
+.car-image img {
+    width: 80%;
+    height: auto;
+    /* Reduce the default max-width for better balance */
+    max-width: 400px; /* Adjust this value (e.g., 400px) to control its size */
+    max-height: auto;
+    object-fit: contain; /* Ensures the whole image is visible without cropping */
+}
+.car-list {
+    flex-basis: auto; /* Allow content to dictate base width */
+    max-width: 15rem; /* Set a specific, constrained width for the list */
+    padding-left: 0; /* Remove padding if list items have their own padding */
+}
+
+/* 2. Constrain the Car Info Table (The Details) */
+.car-info {
+    flex-basis: auto; /* Allow content to dictate base width */
+    max-width: 25rem; /* Reduce the width of the table column */
+    /* Add a margin to the right if needed, but flex gap should handle this */
+}
+.car-image {
+    /* Let the image take up the flexible, remaining space */
+    flex: 3 1 350px; /* flex-grow: 3; flex-shrink: 1; flex-basis: 350px; */
+    text-align: center
+}
+.car-info table {
+    width: 100%; /* Ensure the table fills the new 25rem max-width */
+}
+/* Adjust for larger screens using media queries */
+@media (min-width: 768px) {
+    /* Increase section padding on larger screens */
+    .vehicle-display {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    /* Set explicit widths for the side elements to balance the layout */
+    .car-list {
+        max-width: 15rem; /* Fixed width for list */
+    }
+    .car-info {
+        max-width: 25rem; /* Fixed width for table */
+    }
+    
+    /* Center the elements when wrapped */
+    .car-info, .car-image, .car-list {
+        margin: 0; /* Clear previous margins */
+    }
+    .car-image img {
+        /* Reduce the image size here as well, from the previous 50rem */
+        max-width: 35rem; /* Or use a smaller pixel value like 500px */
+        max-height: 35rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .car-info,
+    .car-image,
+    .car-list {
+        padding: 2rem;
+    }
+}
+
+@media (min-width: 2000px) {  
+    .car-info,
+    .car-image,
+    .car-list {
+        padding: 1rem; 
+        max-width: 20rem; 
+        max-height: 20rem;  
+    }
+    .car-image img {
+        max-width: 50rem; 
+        max-height: 50rem;       
+    }
+}
+.car-list-heading {
+    width: 100%;
+    background-color: rgb(159, 158, 158);
+    color: #ffffff;
+    font-weight: bold;
+    padding: 1rem 1.5rem; 
+    margin: 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+/* Important: Remove default paragraph margin inside the heading */
+.car-list-heading p {
+    margin: 0;
+    font-size: 20px;
+}
+.vehicle-models-section h1 {
+        font-size: 3rem;
+        padding-top: 2rem;
+        padding-left: 2rem;
+        margin-bottom: 0.25rem;
+    }
+    .vehicle-models-section h2 {
+        font-size: 2rem;
+        padding-left: 2rem;
+        margin-bottom: 0.25rem;
+    }  
+.car-table {
+    /* Existing Flex properties (from previous steps) */
+    flex: 1 1 200px;
+    max-width: 20rem; 
+    min-width: 150px;
+    
+    /* NEW: Ensure the container uses flex for the buttons inside */
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.car-info table {
+    width: 100%;
+}
+.reserve-button {
+    display: block;
+    text-align: center;
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.reserve-button:hover {
+    background-color: darkblue;
+}
+.car-list {
+    cursor: pointer;
+}
+.car-list li:hover {
+    text-decoration: underline;
+}
+.car-cell {
+    width: 100%;
+    height: auto; 
+    text-align: center; 
+    padding: 1rem;
+    margin: 1px; 
+    cursor: pointer;
+    background-color: lightgrey;
+    transition: background-color 0.3s;
+    position: relative;
+}
+.car-cell p {
+    align-self: center;
+    margin: 1.5rem;
+    font-weight: bold;
+}
+.car-cell:hover {
+    background-color: #ccc; 
+}
+.car-cell.selected {
+    background-color: #888; 
+}
+.car-cell.selected::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -10px; 
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 8px solid #888; 
+}
+.car-info table {
+    border: 1px solid #ccc; 
+    border-collapse: collapse; 
+    width: 100%; 
+}
+.car-info th {
+    background-color: #888; 
+    color: #fff; 
+    text-align: center;
+    padding: 10px;
+}
+.car-info td {
+    border: 1px solid #ccc; 
+    padding: 10px;
+}
+.car-info tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+.car-info a.reserve-button {
+    display: block;
+    background-color: #888;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    margin: 10px 0;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    transition: transform 0.5s;
+    box-shadow: 2px 2px 5px 3px rgba(0, 0, 0, 0.3);
+}
+.car-info a.reserve-button:hover {
+    background-color: #007BFF;
+    transform: scale(1.2);
+    font-weight: bold;
+}
+
+/* Customer reviews carousel */
+.customer-reviews {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    margin-top: 5rem;
+    position: relative;
+}
+.review-slide {
+    flex: 0 0 100%;
+    transition: transform 0.5s;
+}
+.review-slide img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Customer reviews carousel styles */
+.carousel-inner {
+    padding-bottom: 1rem;
+    position: fixed;
+}
+#reviewCarousel .carousel-indicators li {
+    background-color: grey;
+    border: none;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+#reviewCarousel .carousel-inner .carousel-item img {
+    display: block;
+    padding-bottom: 1rem;
+    margin: 0 auto;
+    margin-left: 0rem;
+    margin-right: 5rem;
+}
+#reviewCarousel .carousel-indicators .active {
+    background-color: blue;
+}
+
+/* Update: Ensure date and time inputs are grouped horizontally on larger screens */
+.datetime-inputs {
+    display: flex;
+    align-items: center;
+}
+
+/* Ensure date and time inputs take up available space */
+.datetime input[type="date"], 
+.datetime input[type="time"] {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.datetime input[type="time"] {
+    margin-right: 0;
+    margin-left: 10px;
+}
+
+/*Come and meet our staff section*/
+@media (max-width: 767px) {
+    .staff-section {
+        flex-direction: column; 
+        padding: 2rem 1rem; 
+    }
+    .text-content {
+        padding-left: 1rem; 
+        padding-right: 1rem; 
+        text-align: center; 
+        flex-direction: column;
+        display: flex;
+        max-width: 100%;
+    }
+    .text-content h2 {
+        font-size: 4vw; 
+    }
+    .text-content p {
+        font-size: 3.5vw; 
+    }
+    .staff img {
+        max-width: 100%;
+        height: auto;
+    }
+    .staff {
+        margin-bottom: 2rem; 
+    }
+}
+/* Medium screens (tablets) */
+@media (min-width: 768px) {
+    .staff-section {
+        flex-direction: row; 
+        justify-content: center;
+        padding: 2rem 4rem; 
+    }
+    .text-content {
+        padding-left: 3rem;
+        padding-right: 3rem;
+        text-align: left; 
+        margin-bottom: 0; 
+    }
+    .staff {
+        flex-basis: 50rem; 
+        width: auto;
+    }
+    .staff img {
+        max-width: 100%;
+        height: auto;
+    }
+    .text-content h2 {
+        font-size: 2vw;
+        padding-top: 1rem;
+        text-align: center;
+    }
+    .text-content p {
+        font-size: 1.5vw; 
+        text-align: center;
+    }
+}
+/* Large screens (desktops) */
+@media (min-width: 1200px) {
+    .staff-section {
+        flex-direction: row;
+        justify-content: center; 
+        padding: 2rem 14rem; 
+    }
+    .text-content {
+        padding-left: 3rem;
+        padding-right: 3rem;
+        text-align: left; 
+        margin-bottom: 0; 
+    }
+    .staff {
+        flex-basis: 40rem; 
+    }
+    .staff img {
+        max-width: 100%;
+        height: auto;
+    }
+    .text-content h2 {
+        font-size: 28px; 
+        text-align: center;
+    }
+    .text-content p {
+        font-size: 20px; 
+        text-align: left;
+    }
+}
+
+@media (min-width: 1600px) {
+    .staff-section {
+        background-color: #f4f4f4;
+        padding: 4rem 5rem;
+        margin-bottom: 5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-basis: 50rem;
+    }
+    .text-content {
+        flex: 1;
+        padding-left: 10rem; 
+        font-size: 18px;
+    }
+    .text-content h2 {
+        font-size: 28px; 
+        text-align: center;
+    }
+    .text-content p {
+        font-size: 20px; 
+        text-align: left;
+    }
+    .staff {
+        flex-basis: 50rem;
+        max-height: 20rem;
+        overflow: hidden;
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+    }
+    .staff img {
+        width: 100%;
+        height: auto;
+    }
+}
+/*ultra large screens (TV)*/
+@media (min-width: 2200px) {
+    .staff-section {
+        padding: 4rem 25rem;
+    }
+}
+
+/*Quality Section*/
+@media (max-width: 767px) {
+    .quality-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center; 
+        margin: 2rem 2rem; 
+    }
+    .quality-section .video video{
+        width: 100%;
+        height: auto;
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+    }
+    .quality-section .content h2 {
+        font-size: 4vw; 
+    }
+    .quality-section .content p {
+        font-size: 3.5vw; 
+    }
+}
+@media (min-width: 768px) {
+    .quality-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center; 
+        margin: 4rem 4rem; 
+    }
+    .quality-section .video video{
+        width: 100%;
+        height: auto;
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+    }
+    .quality-section .content h2 {
+        font-size: 2vw;
+        padding-top: 1rem;
+        text-align: center;
+    }
+    .quality-section .content p {
+        font-size: 1.5vw; 
+        text-align: center;
+    }
+}
+@media (min-width: 1200px) {
+    .quality-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center; 
+        margin: 2rem 14rem; 
+    }
+    .quality-section .video video{
+        width: 100%;
+        height: auto;
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+    }
+    .quality-section .content {
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+    .quality-section .content h2 {
+        font-size: 28px; 
+        text-align: center;
+    }
+    .quality-section .content p {
+        font-size: 20px; 
+        text-align: left;
+    }
+}
+@media (min-width: 1600px) {
+    .quality-section {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 20px;
+        text-align: left; 
+        margin: 4rem 5rem; 
+        margin-bottom: 10rem;
+    }
+    .quality-section .content {
+        flex: 1;
+        padding-right: 10rem;
+    }
+    .quality-section .video {
+        flex: 1;
+        max-width: 40rem;
+        max-height: 20rem;
+        overflow: hidden; 
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+    }
+    .quality-section .video video {
+        width: 100%; 
+        height: auto;
+    }
+    .tooltip:hover:after {
+        content: 'This is a tooltip content!';
+        display: block;
+        position: absolute;
+        background-color: #333;
+        color: #fff;
+        padding: 5px;
+        border-radius: 5px;
+        bottom: -25px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        margin-top: 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    .info-btn {
+        background-color: #000;
+        color: #fff;
+        margin-right: 10px;
+    }
+    .buy-btn {
+        background-color: #0099FF;
+        color: #fff;
+    }
+}
+@media (min-width: 2200px) {
+    .quality-section {
+        margin: 4rem 25rem; 
+    }
+}
+
+
+/*Email Sign-up*/
+.email-signup {
+    background: linear-gradient(to bottom,#303131 0,rgba(48,49,49,.8) 50%,#303131 100%);
+    padding: 3rem;
+    color: #FFF;
+    text-align: center;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+}
+.email-signup h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 1.5em;
+    color: white;
+}
+.email-signup p {
+    margin: 10px 0;
+    font-size: 0.9em;
+}
+.email-input-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+.email-input-group input {
+    padding: 10px;
+    width: 300px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+}
+.email-input-group button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    background-color: #FFF;
+    color: #2E2E2E;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.email-input-group button:hover {
+    background-color: #ddd;
+}
+.social-icons {
+    margin-top: 20px;
+}
+.social-icons img {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    width: 3rem;
+    height: auto;
+}
+
+/*Map*/
+.locations-title h1,h3 {
+    margin-top: 5rem;
+    text-align: center;
+}
+.container {
+    margin-top: 5rem;
+    margin-bottom: 10rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.locations {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 40%;
+    padding-right: 1rem;
+}
+.location {
+    padding: 10px;
+    background-color: #eee;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+.location.active {
+    background-color: #ddd;
+    border: 1px solid #000;
+}
+.map img {
+    width: 100%;
+    height: auto;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+}
+.address {
+    padding-left: 1rem;
+    width: 50%;
+}
+/*Map Modal*/
+.map-modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 300%;
+    height: auto;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+}
+.map-modal-content {
+    margin: auto;
+    display: block;
+    width: 200%;
+    max-width: 1920px;
+}
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/*Contact Us section*/
+.contact-us {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+}
+h1, h2 {
+    color: darkslategrey;
+    margin-bottom: .5rem;
+}
+strong {
+    color: #555;
+}
+form {
+    margin-top: 30px;
+    flex:1;
+}
+input, textarea {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+button {
+    padding: .5rem 1rem;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s;
+}
+button:hover {
+    background-color: #007BFF;
+}
+.customer-center {
+    margin-top: 2rem;
+    flex:1;
+}
+.customer {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+.customer img {
+    width: 15rem;
+    height: 20rem;
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+.customer ul {
+    list-style-type: none;
+}
+
+/*Footer*/
+footer {
+    background-color: #2a2a2a;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    text-align: center;
+}
+footer a {
+    text-decoration: none;
+}
+footer nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: inline-flex;
+    justify-content: center;
+}
+footer nav ul li {
+    margin: 0 2rem;
+}
+footer nav ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+footer nav ul li a:hover {
+    color: blue;
+}
+footer h3 {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    color: white;
+}
+footer nav ul li a, footer nav ul li a:hover {
+    text-decoration: none !important;
+}
+footer a, footer h3:hover {
+    text-decoration: none !important;
+}
