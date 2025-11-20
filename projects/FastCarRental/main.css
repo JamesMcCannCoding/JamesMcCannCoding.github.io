@@ -705,11 +705,13 @@ input::placeholder {
         padding-top: 2rem;
         padding-left: 2rem;
         margin-bottom: 0.25rem;
+        text-align: center;
     }
     .vehicle-models-section h2 {
         font-size: 2rem;
         padding-left: 2rem;
         margin-bottom: 0.25rem;
+        text-align: center;
     }  
 .car-table {
     /* Existing Flex properties (from previous steps) */
@@ -815,6 +817,12 @@ input::placeholder {
 }
 
 /* Customer reviews carousel */
+.review-heading {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+}
 .customer-reviews {
     display: flex;
     overflow: hidden;
@@ -845,7 +853,7 @@ input::placeholder {
 }
 #reviewCarousel .carousel-inner .carousel-item img {
     display: block;
-    padding-bottom: 1rem;
+    padding-bottom: 2rem;
     margin: 0 auto;
     margin-left: 0rem;
     margin-right: 5rem;
@@ -871,6 +879,10 @@ input::placeholder {
 .datetime input[type="time"] {
     margin-right: 0;
     margin-left: 10px;
+}
+
+.staff-section .h1 {
+    text-align: center;
 }
 
 /*Come and meet our staff section*/
